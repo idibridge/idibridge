@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>О нас — IDI Bridge</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0d0d;--bg2:#141414;--bg3:#1a1a1a;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#f0f0ee;--muted:#888884;--accent:#e8e6e1;--accent2:#c8c5be;--white:#ffffff}
+html{scroll-behavior:smooth}
+body{font-family:'Golos Text',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(13,13,13,0.96);backdrop-filter:blur(12px);z-index:100}
+.logo{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:900;letter-spacing:-1px;color:var(--white);text-decoration:none}
+.logo span{color:rgba(255,255,255,0.5)}
+.nav-right{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:rgba(255,255,255,0.9)}
+.lang-switch{display:flex;gap:2px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:3px}
+.lang-btn{background:none;border:none;color:var(--muted);font-family:'Golos Text',sans-serif;font-size:13px;font-weight:500;padding:5px 12px;border-radius:6px;cursor:pointer;transition:all 0.2s}
+.lang-btn.active{background:#fff;color:#0a0a0a}
+.nav-cta{background:#fff;color:#0a0a0a;font-family:'Golos Text',sans-serif;font-size:14px;font-weight:600;padding:10px 22px;border:none;border-radius:8px;cursor:pointer;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:#d0cdc6}
+.full-divider{border:none;border-top:1px solid var(--border);margin:0}
+.page-hero{padding:80px 48px 60px;max-width:1100px;margin:0 auto}
+.page-hero h1{font-family:'Unbounded',sans-serif;font-size:clamp(32px,4vw,56px);font-weight:900;letter-spacing:-2px;line-height:1.1;margin-bottom:20px}
+.page-hero h1 em{font-style:normal;color:rgba(255,255,255,0.9)}
+.page-hero p{font-size:18px;color:var(--muted);max-width:560px;line-height:1.7}
+.section{padding:72px 48px;max-width:1100px;margin:0 auto}
+.section-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.section-title{font-family:'Unbounded',sans-serif;font-size:clamp(22px,2.5vw,36px);font-weight:700;letter-spacing:-1px;margin-bottom:40px;line-height:1.2}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.about-text p{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.about-text p strong{color:var(--text);font-weight:600}
+.about-visual{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px}
+.av-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--border)}
+.av-item:last-child{border-bottom:none;padding-bottom:0}
+.av-item:first-child{padding-top:0}
+.av-num{font-family:'Unbounded',sans-serif;font-size:32px;font-weight:900;color:rgba(255,255,255,0.9);line-height:1;min-width:70px}
+.av-label{font-size:15px;font-weight:500;color:var(--white);margin-bottom:4px}
+.av-sub{font-size:13px;color:var(--muted)}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.value-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:28px}
+.value-icon{width:40px;height:40px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.value-icon svg{width:18px;height:18px;stroke:rgba(255,255,255,0.7);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.value-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px}
+.value-desc{font-size:14px;color:var(--muted);line-height:1.65}
+.markets{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.market-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:32px}
+.market-name{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:16px}
+.market-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.market-list li{font-size:14px;color:var(--muted);display:flex;align-items:flex-start;gap:10px}
+.market-list li::before{content:'';width:5px;height:5px;background:rgba(255,255,255,0.5);border-radius:50%;flex-shrink:0;margin-top:7px}
+.cta-bottom{background:var(--bg2);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:56px;text-align:center;max-width:1100px;margin:0 auto 80px}
+.cta-bottom h2{font-family:'Unbounded',sans-serif;font-size:clamp(22px,3vw,36px);font-weight:700;letter-spacing:-1px;margin-bottom:12px}
+.cta-bottom p{font-size:15px;color:var(--muted);margin-bottom:32px}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#fff;color:#0a0a0a;font-family:'Golos Text',sans-serif;font-size:15px;font-weight:600;padding:14px 32px;border:none;border-radius:10px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary svg{width:16px;height:16px;fill:#0d0d0d}
+.btn-primary:hover{background:#d0cdc6}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;font-family:'Golos Text',sans-serif;font-size:15px;font-weight:600;padding:14px 32px;border:none;border-radius:10px;text-decoration:none}
+.wa-btn svg{width:16px;height:16px;fill:white}
+footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;max-width:1100px;margin:0 auto}
+.footer-logo{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:900;color:var(--white)}
+.footer-logo span{color:rgba(255,255,255,0.45)}
+.footer-copy{font-size:13px;color:var(--muted)}
+.footer-tg{font-size:14px;color:var(--muted);text-decoration:none}
+.footer-tg:hover{color:var(--text)}
+@media(max-width:768px){nav{padding:20px 24px}.nav-links{display:none}.page-hero{padding:56px 24px 40px}.section{padding:40px 24px}.about-grid{grid-template-columns:1fr;gap:32px}.markets{grid-template-columns:1fr}.cta-bottom{padding:40px 24px;margin:0 24px 60px}footer{padding:28px 24px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">IDI<span>Bridge</span></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="services.html" data-i18n="nav_services">Услуги</a></li>
+      <li><a href="about.html" class="active" data-i18n="nav_about">О нас</a></li>
+      <li><a href="portfolio.html" data-i18n="nav_portfolio">Портфолио</a></li>
+      <li><a href="contact.html" data-i18n="nav_contact">Контакты</a></li>
+    </ul>
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="contact.html" class="nav-cta" data-i18n="nav_cta">Написать</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1 data-i18n="hero_h1">О <em>IDI Bridge</em></h1>
+  <p data-i18n="hero_p">Цифровое агентство полного цикла. Помогаем бизнесам автоматизировать процессы, выйти в онлайн и расти быстрее.</p>
+</div>
+<hr class="full-divider">
+
+<div class="section">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-label" data-i18n="label_about">О компании</div>
+      <h2 class="section-title" data-i18n="about_title">Решаем задачи бизнеса цифровыми инструментами</h2>
+      <p data-i18n="about_p1">IDI Bridge — агентство цифровых решений. Работаем с малым и средним бизнесом в России и Казахстане, помогая автоматизировать продажи, коммуникацию с клиентами и бизнес-процессы.</p>
+      <p data-i18n="about_p2">Наш подход — <strong>под ключ</strong>. Вы приходите с задачей, мы берём её полностью: анализируем, предлагаем решение, разрабатываем и поддерживаем. Один контакт для всего.</p>
+      <p data-i18n="about_p3">Работаем честно — называем реальные сроки и стоимость, не пропадаем после сдачи проекта.</p>
+    </div>
+    <div class="about-visual">
+      <div class="av-item">
+        <div class="av-num">6+</div>
+        <div><div class="av-label" data-i18n="av1_l">Направлений</div><div class="av-sub" data-i18n="av1_s">Боты, CRM, сайты, дизайн, платежи, автоматизация</div></div>
+      </div>
+      <div class="av-item">
+        <div class="av-num">2</div>
+        <div><div class="av-label" data-i18n="av2_l">Рынка</div><div class="av-sub" data-i18n="av2_s">Россия и Казахстан, работаем онлайн</div></div>
+      </div>
+      <div class="av-item">
+        <div class="av-num">24/7</div>
+        <div><div class="av-label" data-i18n="av3_l">Поддержка</div><div class="av-sub" data-i18n="av3_s">Остаёмся на связи после сдачи проекта</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="full-divider">
+
+<div class="section">
+  <div class="section-label" data-i18n="label_values">Принципы</div>
+  <h2 class="section-title" data-i18n="values_title">Как мы работаем</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="value-title" data-i18n="v1_t">Результат, не процесс</div>
+      <div class="value-desc" data-i18n="v1_d">Нам важно чтобы решение работало и приносило пользу. Не просто сдать задачу.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="value-title" data-i18n="v2_t">Честность</div>
+      <div class="value-desc" data-i18n="v2_d">Называем реальные сроки и стоимость на старте. Без скрытых платежей и неожиданностей.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <div class="value-title" data-i18n="v3_t">Скорость</div>
+      <div class="value-desc" data-i18n="v3_d">Работаем быстро. Простые задачи — за 1-3 дня. Сложные проекты — в согласованные сроки.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="value-title" data-i18n="v4_t">Один контакт</div>
+      <div class="value-desc" data-i18n="v4_d">Не нужно искать разных подрядчиков. Мы закрываем все задачи сами — от сайта до CRM.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="full-divider">
+
+<div class="section">
+  <div class="section-label" data-i18n="label_markets">Рынки</div>
+  <h2 class="section-title" data-i18n="markets_title">Работаем в двух странах</h2>
+  <div class="markets">
+    <div class="market-card">
+      <div class="market-name" data-i18n="m1_name">Россия</div>
+      <ul class="market-list">
+        <li data-i18n="m1_l1">ЮКасса и СБП для приёма платежей</li>
+        <li data-i18n="m1_l2">amoCRM и Битрикс24</li>
+        <li data-i18n="m1_l3">Telegram и WhatsApp боты</li>
+        <li data-i18n="m1_l4">Сайты на любой платформе</li>
+      </ul>
+    </div>
+    <div class="market-card">
+      <div class="market-name" data-i18n="m2_name">Казахстан</div>
+      <ul class="market-list">
+        <li data-i18n="m2_l1">Kaspi Pay, Halyk, Forte эквайринг</li>
+        <li data-i18n="m2_l2">Telegram очень популярен — делаем ботов</li>
+        <li data-i18n="m2_l3">CRM под казахстанский рынок</li>
+        <li data-i18n="m2_l4">Меньше конкуренция — быстрее результат</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="cta-bottom">
+  <h2 data-i18n="cta_title">Давайте работать вместе</h2>
+  <p data-i18n="cta_sub">Расскажите о задаче — предложим решение. Работаем по всей России и Казахстану.</p>
+  <div class="cta-btns">
+    <a href="https://t.me/idi_99" target="_blank" class="btn-primary">
+      <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
+      <span data-i18n="cta_tg">Написать в Telegram</span>
+    </a>
+    <a href="https://wa.me/79930770197" target="_blank" class="wa-btn">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">IDI<span>Bridge</span></div>
+  <div class="footer-copy">© 2025 IDI Bridge</div>
+  <a href="https://t.me/idi_99" target="_blank" class="footer-tg">@idi_99</a>
+</footer>
+<script>
+const i18n={ru:{nav_services:"Услуги",nav_about:"О нас",nav_portfolio:"Портфолио",nav_contact:"Контакты",nav_cta:"Написать",hero_h1:"О <em>IDI Bridge</em>",hero_p:"Цифровое агентство полного цикла. Помогаем бизнесам автоматизировать процессы, выйти в онлайн и расти быстрее.",label_about:"О компании",about_title:"Решаем задачи бизнеса цифровыми инструментами",about_p1:"IDI Bridge — агентство цифровых решений. Работаем с малым и средним бизнесом в России и Казахстане.",about_p2:"Наш подход — <strong>под ключ</strong>. Один контакт для всего.",about_p3:"Работаем честно — называем реальные сроки и стоимость.",av1_l:"Направлений",av1_s:"Боты, CRM, сайты, дизайн, платежи, автоматизация",av2_l:"Рынка",av2_s:"Россия и Казахстан, работаем онлайн",av3_l:"Поддержка",av3_s:"Остаёмся на связи после сдачи проекта",label_values:"Принципы",values_title:"Как мы работаем",v1_t:"Результат, не процесс",v1_d:"Нам важно чтобы решение работало и приносило пользу.",v2_t:"Честность",v2_d:"Называем реальные сроки и стоимость. Без скрытых платежей.",v3_t:"Скорость",v3_d:"Простые задачи — за 1-3 дня. Сложные — в согласованные сроки.",v4_t:"Один контакт",v4_d:"Не нужно искать разных подрядчиков. Закрываем все задачи сами.",label_markets:"Рынки",markets_title:"Работаем в двух странах",m1_name:"Россия",m1_l1:"ЮКасса и СБП для приёма платежей",m1_l2:"amoCRM и Битрикс24",m1_l3:"Telegram и WhatsApp боты",m1_l4:"Сайты на любой платформе",m2_name:"Казахстан",m2_l1:"Kaspi Pay, Halyk, Forte эквайринг",m2_l2:"Telegram очень популярен — делаем ботов",m2_l3:"CRM под казахстанский рынок",m2_l4:"Меньше конкуренция — быстрее результат",cta_title:"Давайте работать вместе",cta_sub:"Расскажите о задаче — предложим решение. Работаем по всей России и Казахстану.",cta_tg:"Написать в Telegram"},en:{nav_services:"Services",nav_about:"About",nav_portfolio:"Portfolio",nav_contact:"Contact",nav_cta:"Get in touch",hero_h1:"About <em>IDI Bridge</em>",hero_p:"Full-cycle digital agency. We help businesses automate processes, go online and grow faster.",label_about:"About us",about_title:"We solve business problems with digital tools",about_p1:"IDI Bridge is a digital solutions agency working with small and medium businesses in Russia and Kazakhstan.",about_p2:"Our approach is <strong>turnkey</strong>. You come with a task, we handle everything. One contact for all.",about_p3:"We work honestly — we name real timelines and costs upfront.",av1_l:"Directions",av1_s:"Bots, CRM, websites, design, payments, automation",av2_l:"Markets",av2_s:"Russia and Kazakhstan, fully remote",av3_l:"Support",av3_s:"We stay in touch after project delivery",label_values:"Principles",values_title:"How we work",v1_t:"Results, not process",v1_d:"We care that the solution works and brings value. Not just completing the task.",v2_t:"Honesty",v2_d:"We name real timelines and costs upfront. No hidden fees or surprises.",v3_t:"Speed",v3_d:"Simple tasks — 1-3 days. Complex projects — within agreed timelines.",v4_t:"One contact",v4_d:"No need to find multiple contractors. We handle everything ourselves.",label_markets:"Markets",markets_title:"We work in two countries",m1_name:"Russia",m1_l1:"YooKassa and SBP for payments",m1_l2:"amoCRM and Bitrix24",m1_l3:"Telegram and WhatsApp bots",m1_l4:"Websites on any platform",m2_name:"Kazakhstan",m2_l1:"Kaspi Pay, Halyk, Forte acquiring",m2_l2:"Telegram is very popular — we build bots",m2_l3:"CRM for the Kazakhstani market",m2_l4:"Less competition — faster results",cta_title:"Let's work together",cta_sub:"Tell us about your task — we'll suggest a solution. We work across Russia and Kazakhstan.",cta_tg:"Write on Telegram"}};
+function setLang(lang){document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()));document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(i18n[lang][k])el.innerHTML=i18n[lang][k]});document.documentElement.lang=lang}
+</script>
+</body>
+</html>
