@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDI — Контакты</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0B1220;--bg2:#0F1A2E;--bg3:#152240;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--border3:rgba(255,255,255,0.2);
+  --text:#E8EAF0;--muted:#5A6480;--muted2:#8A94B0;
+  --accent:#7EB8F7;--accent2:#A8D4FF;--white:#F0F4FF;
+}
+@keyframes fadeInPage{from{opacity:0}to{opacity:1}}
+body{animation:fadeInPage 1.2s ease-out;font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;font-weight:400}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 56px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(11,18,32,0.97);backdrop-filter:blur(16px);z-index:100}
+.logo{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:900;letter-spacing:0.5px;text-transform:uppercase;color:var(--white);text-decoration:none}
+.logo em{font-style:normal;color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--muted2);text-decoration:none;font-size:13px;transition:color 0.2s}
+.nav-links a.active{color:var(--white)}
+.lang-switch{display:flex;gap:2px;border:1px solid var(--border2);border-radius:6px;padding:3px}
+.lang-btn{background:none;border:none;color:var(--muted);font-family:'Open Sans',sans-serif;font-size:12px;font-weight:500;padding:5px 12px;border-radius:4px;cursor:pointer;transition:all 0.2s}
+.lang-btn.active{background:var(--accent);color:#0B1220}
+.nav-cta{color:var(--accent);font-size:13px;font-weight:500;padding:9px 22px;border:1px solid rgba(126,184,247,0.4);border-radius:6px;text-decoration:none;transition:all 0.2s}
+.full-divider{border:none;border-top:1px solid var(--border);margin:0}
+.page-hero{padding:80px 48px 60px;max-width:1100px;margin:0 auto}
+.page-hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px}
+.page-hero h1 em{font-style:normal;color:var(--white)}
+.page-hero p{font-size:18px;color:var(--muted);max-width:560px;line-height:1.7}
+.section{padding:72px 48px;max-width:1100px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-channels{display:flex;flex-direction:column;gap:12px}
+.channel-card{display:flex;align-items:center;gap:20px;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:24px;text-decoration:none;transition:border-color 0.2s}
+.channel-card:hover{border-color:var(--border2)}
+.ch-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ch-icon svg{width:22px;height:22px;fill:white}
+.ch-icon.tg{background:#229ED9}
+.ch-icon.wa{background:#25D366}
+.ch-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px}
+.ch-sub{font-size:13px;color:var(--muted)}
+.ch-arrow{margin-left:auto;color:var(--muted);font-size:18px}
+.info-block{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px}
+.info-title{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:24px;letter-spacing:-0.3px}
+.info-list{display:flex;flex-direction:column;gap:20px}
+.info-item{display:flex;gap:16px;align-items:flex-start}
+.info-icon{width:40px;height:40px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.info-icon svg{width:16px;height:16px;stroke:rgba(255,255,255,0.7);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.info-label{font-size:12px;color:var(--muted);margin-bottom:4px}
+.info-value{font-size:14px;color:var(--text);font-weight:500}
+.faq{margin-top:64px}
+.faq-title{font-family:'Montserrat',sans-serif;font-size:clamp(20px,2.5vw,32px);font-weight:700;letter-spacing:-0.5px;margin-bottom:32px}
+.faq-list{display:flex;flex-direction:column;gap:2px}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-q{padding:20px 24px;cursor:pointer;font-size:15px;font-weight:500;color:var(--white);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q::after{content:'+';font-size:20px;color:var(--accent);flex-shrink:0;transition:transform 0.2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{display:block}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-tg{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#0B1220;font-family:'Open Sans',sans-serif;font-size:14px;font-weight:600;padding:13px 28px;border:none;border-radius:6px;text-decoration:none;transition:background 0.2s}
+.btn-tg:hover{background:var(--accent2)}
+.btn-tg svg{width:15px;height:15px;fill:#0B1220;flex-shrink:0}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--text);font-family:'Open Sans',sans-serif;font-size:14px;font-weight:400;padding:13px 28px;border:1px solid var(--border2);border-radius:6px;text-decoration:none;transition:all 0.2s}
+.btn-wa:hover{border-color:var(--border3);color:var(--white)}
+.btn-wa svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
+footer{border-top:1px solid var(--border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;max-width:1100px;margin:0 auto}
+.footer-logo{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:900;color:var(--white)}
+.footer-logo em{font-style:normal;color:var(--accent)}
+.footer-copy{font-size:13px;color:var(--muted)}
+.footer-tg{font-size:14px;color:var(--muted);text-decoration:none}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px;margin-left:auto}
+.burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}
+.mobile-menu{display:none;flex-direction:column;gap:0;padding:16px 24px;background:var(--bg2);border-bottom:1px solid var(--border)}
+.mobile-menu a{color:var(--muted2);text-decoration:none;font-size:15px;padding:12px 0;border-bottom:1px solid var(--border)}
+.mobile-menu .lang-switch{align-self:flex-start;margin:12px 0 4px}
+.mobile-menu .nav-cta{margin-top:8px;text-align:center;border-bottom:none}
+.mobile-menu.open{display:flex}
+@media(max-width:900px){nav{display:flex;justify-content:space-between;align-items:center;padding:22px 56px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(11,18,32,0.97);backdrop-filter:blur(16px);z-index:100}.nav-links{display:none}.page-hero{padding:56px 24px 40px}.section{padding:40px 24px}.contact-grid{grid-template-columns:1fr;gap:32px}footer{padding:24px;flex-direction:column;text-align:center;gap:8px}}
+@keyframes pageReveal{0%{opacity:0;filter:brightness(0.3)}40%{opacity:1;filter:brightness(0.6)}100%{opacity:1;filter:brightness(1)}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">IDI <em>BRIDGE</em></a>
+  <button class="burger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="services.html" data-i18n="nav_services">Услуги</a></li>
+    <li><a href="about.html" data-i18n="nav_about">О нас</a></li>
+    <li><a href="portfolio.html" data-i18n="nav_portfolio">Портфолио</a></li>
+    <li><a href="contact.html" class="active" data-i18n="nav_contact">Контакты</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="contact.html" class="nav-cta" data-i18n="nav_cta">Написать</a>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="services.html" data-i18n="nav_services">Услуги</a>
+  <a href="about.html" data-i18n="nav_about">О нас</a>
+  <a href="portfolio.html" data-i18n="nav_portfolio">Портфолио</a>
+  <a href="contact.html" data-i18n="nav_contact">Контакты</a>
+  <div class="lang-switch" style="margin-top:12px"><button class="lang-btn active" onclick="setLang('ru')">RU</button><button class="lang-btn" onclick="setLang('en')">EN</button></div>
+  <a href="contact.html" class="nav-cta" data-i18n="nav_cta" style="margin-top:8px;text-align:center">Связаться</a>
+</div>
+
+<div class="page-hero">
+  <h1 data-i18n="hero_h1">Свяжитесь <em>с нами</em></h1>
+  <p data-i18n="hero_p">Опишите задачу — ответим быстро и предложим решение. Работаем по всей России и Казахстану.</p>
+</div>
+<hr class="full-divider">
+
+<div class="section">
+  <div class="contact-grid">
+    <div>
+      <div style="font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);opacity:0.7;margin-bottom:16px" data-i18n="label_contact">Контакты</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:clamp(18px,2vw,28px);font-weight:700;letter-spacing:-0.5px;margin-bottom:28px;line-height:1.2" data-i18n="contact_title">Напишите нам удобным способом</div>
+      <div class="contact-channels">
+        <a href="https://t.me/idi_99" target="_blank" class="channel-card">
+          <div class="ch-icon tg">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
+          </div>
+          <div>
+            <div class="ch-title">Telegram</div>
+            <div class="ch-sub">@idi_99</div>
+          </div>
+          <div class="ch-arrow">→</div>
+        </a>
+        <a href="https://wa.me/79930770197" target="_blank" class="channel-card">
+          <div class="ch-icon wa">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <div class="ch-title">WhatsApp</div>
+            <div class="ch-sub">+7 993 077 01 97</div>
+          </div>
+          <div class="ch-arrow">→</div>
+        </a>
+      </div>
+    </div>
+    <div class="info-block">
+      <div class="info-title" data-i18n="info_title">Полезно знать</div>
+      <div class="info-list">
+        <div class="info-item">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><div class="info-label" data-i18n="i1_label">Время ответа</div><div class="info-value" data-i18n="i1_value">В течение 1-2 часов в рабочее время</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="info-label" data-i18n="i2_label">Работаем</div><div class="info-value" data-i18n="i2_value">Онлайн — Россия и Казахстан</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <div><div class="info-label" data-i18n="i3_label">Первая консультация</div><div class="info-value" data-i18n="i3_value">Бесплатно и без обязательств</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div><div class="info-label" data-i18n="i4_label">Оплата</div><div class="info-value" data-i18n="i4_value">После согласования, частями</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <h2 class="faq-title" data-i18n="faq_title">Частые вопросы</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq_q1" onclick="toggleFaq(this)">Сколько стоят ваши услуги?</div>
+        <div class="faq-a" data-i18n="faq_a1">Стоимость зависит от задачи. Простой Telegram-бот — от 5 000 ₽. CRM-интеграция — от 8 000 ₽. Сайт — от 10 000 ₽. Точную цену называем после разбора задачи — бесплатно.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq_q2" onclick="toggleFaq(this)">Как долго делается проект?</div>
+        <div class="faq-a" data-i18n="faq_a2">Простые задачи — 1-3 дня. Telegram-бот — 3-7 дней. Сайт с нуля — 5-14 дней. CRM под ключ — 7-14 дней. Называем срок на берегу и держим его.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq_q3" onclick="toggleFaq(this)">Работаете ли вы с Казахстаном?</div>
+        <div class="faq-a" data-i18n="faq_a3">Да, работаем с бизнесами из Казахстана. Подключаем Kaspi Pay, Halyk и Forte для приёма платежей. Общаемся в Telegram — всё онлайн.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" data-i18n="faq_q4" onclick="toggleFaq(this)">Что будет после сдачи проекта?</div>
+        <div class="faq-a" data-i18n="faq_a4">Не пропадаем. Остаёмся на связи, помогаем если что-то пошло не так. По желанию берём проект на техподдержку.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">IDI <em>BRIDGE</em></div>
+  <div class="footer-copy">© 2025 IDI BRIDGE</div>
+  <a href="https://t.me/idi_99" target="_blank" class="footer-tg">@idi_99</a>
+</footer>
+<script>
+function toggleFaq(el){const item=el.parentElement;item.classList.toggle('open')}
+const i18n={ru:{nav_services:"Услуги",nav_about:"О нас",nav_portfolio:"Портфолио",nav_contact:"Контакты",nav_cta:"Написать",hero_h1:"Свяжитесь <em>с нами</em>",hero_p:"Опишите задачу — ответим быстро и предложим решение. Работаем по всей России и Казахстану.",label_contact:"Контакты",contact_title:"Напишите нам удобным способом",info_title:"Полезно знать",i1_label:"Время ответа",i1_value:"В течение 1-2 часов в рабочее время",i2_label:"Работаем",i2_value:"Онлайн — Россия и Казахстан",i3_label:"Первая консультация",i3_value:"Бесплатно и без обязательств",i4_label:"Оплата",i4_value:"После согласования, частями",faq_title:"Частые вопросы",faq_q1:"Сколько стоят ваши услуги?",faq_a1:"Стоимость зависит от задачи. Telegram-бот — от 5 000 ₽. CRM-интеграция — от 8 000 ₽. Сайт — от 10 000 ₽. Точную цену называем после разбора задачи.",faq_q2:"Как долго делается проект?",faq_a2:"Простые задачи — 1-3 дня. Telegram-бот — 3-7 дней. Сайт с нуля — 5-14 дней. CRM под ключ — 7-14 дней.",faq_q3:"Работаете ли вы с Казахстаном?",faq_a3:"Да, работаем. Подключаем Kaspi Pay, Halyk и Forte. Общаемся в Telegram — всё онлайн.",faq_q4:"Что будет после сдачи проекта?",faq_a4:"Остаёмся на связи, помогаем если что-то пошло не так. По желанию берём на техподдержку."},en:{nav_services:"Services",nav_about:"About",nav_portfolio:"Portfolio",nav_contact:"Contact",nav_cta:"Get in touch",hero_h1:"Get in <em>touch</em>",hero_p:"Describe your task — we will respond quickly and suggest a solution. Working across Russia and Kazakhstan.",label_contact:"Contact",contact_title:"Write to us in any convenient way",info_title:"Good to know",i1_label:"Response time",i1_value:"Within 1-2 hours during business hours",i2_label:"We work",i2_value:"Online — Russia and Kazakhstan",i3_label:"First consultation",i3_value:"Free and no obligation",i4_label:"Payment",i4_value:"After agreement, in parts",faq_title:"Frequently asked questions",faq_q1:"How much do your services cost?",faq_a1:"Cost depends on the task. Telegram bot — from 5,000 ₽. CRM integration — from 8,000 ₽. Website — from 10,000 ₽.",faq_q2:"How long does a project take?",faq_a2:"Simple tasks — 1-3 days. Telegram bot — 3-7 days. Website from scratch — 5-14 days. CRM turnkey — 7-14 days.",faq_q3:"Do you work with Kazakhstan?",faq_a3:"Yes. We connect Kaspi Pay, Halyk and Forte. We communicate on Telegram — everything is online.",faq_q4:"What happens after project delivery?",faq_a4:"We stay in touch and help if something goes wrong. We can take the project for technical support."}};
+function setLang(lang){localStorage.setItem('idi_lang',lang);document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()));document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(i18n[lang][k])el.innerHTML=i18n[lang][k]});document.documentElement.lang=lang}
+(function(){const saved=localStorage.getItem('idi_lang');if(saved&&saved!=='ru')setLang(saved)})();
+</script>
+</body>
+</html>
